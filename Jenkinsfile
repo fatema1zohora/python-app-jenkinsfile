@@ -6,8 +6,8 @@ node{
      sh 'docker build -t fatema1zohora/my-testpython:2.0.5 .'
    }
    stage('Push Docker Image'){
-     withCredentials([string(credentialsId: 'dockerpassword', variable: 'dockerhubpassword3')]) {
-        sh "docker login -u fatema1zohora -p ${dockerhubpassword3}"
+     withCredentials([string(credentialsId: 'dockerhubpassword3', variable: 'dockerhubpassword')]) {
+        sh "docker login -u fatema1zohora -p ${dockerhubpassword}"
      }
      sh 'docker push fatema1zohora/my-testpython:2.0.5'
    }
