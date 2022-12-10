@@ -13,7 +13,7 @@ node{
    }
    stage('Run Container on Staging'){ 
      def dockerRun = 'docker run  -p 6378:6379 -d --name redis redis'
-     def dockerRun1 = 'docker run -p 4042:80 -d --link redis --name my-python-app fatema1zohora/my-testpython:2.0.4'
+     def dockerRun1 = 'docker run -p 4042:80 -d --link redis --name my-python-app fatema1zohora/my-testpython:2.0.5'
      def dockerRun2 = 'docker rm -f my-python-app'
      def dockerRun3 = 'docker rm -f redis'
      sshagent(['dockerserver']) {
